@@ -17,7 +17,7 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.4.0")
-    testImplementation("org.amshove.kluent:kluent:1.61")
+    testImplementation("io.kotest:kotest-assertions-core:4.2.3")
 }
 
 tasks.test {

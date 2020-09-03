@@ -1,8 +1,8 @@
 package com.github.lunchee.simplegraph
 
 import com.github.lunchee.simplegraph.path.Path
-import com.github.lunchee.simplegraph.test.shouldContainExactly
-import org.amshove.kluent.shouldBeEmpty
+import io.kotest.matchers.collections.shouldBeEmpty
+import io.kotest.matchers.collections.shouldContainExactly
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 

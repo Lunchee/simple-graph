@@ -1,9 +1,11 @@
 package com.github.lunchee.simplegraph
 
 import com.github.lunchee.simplegraph.path.Path
-import com.github.lunchee.simplegraph.test.shouldContainExactly
 import com.github.lunchee.simplegraph.weight.WeightedEdge
-import org.amshove.kluent.*
+import io.kotest.matchers.collections.shouldBeEmpty
+import io.kotest.matchers.collections.shouldContainExactly
+import io.kotest.matchers.collections.shouldContainExactlyInAnyOrder
+import io.kotest.matchers.nulls.shouldNotBeNull
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
@@ -117,8 +119,7 @@ class GraphTest {
         graph.traverse { vertex -> visitedVertices.add(vertex) }
 
         // then
-        visitedVertices.shouldHaveSize(3)
-        visitedVertices.shouldContainAll(listOf(firstVertex, secondVertex, thirdVertex))
+        visitedVertices.shouldContainExactlyInAnyOrder(firstVertex, secondVertex, thirdVertex)
     }
 
     @Test
@@ -138,6 +139,6 @@ class GraphTest {
 
         // then
         path.shouldNotBeNull()
-        path.connections.shouldContain(Connection(from = firstVertex, to = thirdVertex, edge = WeightedEdge(10)))
+        path.connections.shouldContainExactly(Connection(from = firstVertex, to = thirdVertex, edge = WeightedEdge(10)))
     }
 }
