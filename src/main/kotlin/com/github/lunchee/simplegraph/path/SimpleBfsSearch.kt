@@ -19,7 +19,7 @@ class SimpleBfsSearch<EdgeT> : PathSearchAlgorithm<EdgeT> {
         val visitedVertices = HashSet<Vertex<VertexT>>()
 
         while (!pathQueue.isEmpty()) {
-            val currentPoint = pathQueue.first()
+            val currentPoint = pathQueue.pollFirst()
 
             if (visitedVertices.contains(currentPoint.vertex)) {
                 continue
